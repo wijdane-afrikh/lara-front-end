@@ -1,0 +1,502 @@
+@import url("https://fonts.googleapis.com/css2?family= Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,400;1,500 & display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
+}
+.btn-r{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+:root {
+    --color-1: #fff;
+    --color-2: #fff;
+    --color-3: #eee;
+    --color4: #fff;
+    --color5: rgb(45, 154, 168);
+    --blue: #2D9AA8;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+
+
+
+main {
+    background: var(--color-3);
+    display: flex;
+}
+
+.Navigation {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background: var(--color5);
+    /* margin-top: 20px; */
+    // padding: 0 15px;
+    /* margin-left: 10px; */
+    font-weight: 600;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    z-index: 200;
+    transition: 1s;
+
+    &.active {
+        width: 75px;
+        overflow: hidden;
+        transition: 1s;
+    }
+}
+
+.Items {
+    position: relative;
+    display: flex;
+    text-align: center;
+    gap: 28px;
+    padding: 15px 0;
+    padding-left: 20px;
+    border-radius: 5px;
+    width: 230px;
+    margin-bottom: 10px;
+    color: var(--color-3);
+    font-size: 16px;
+    transition: 1s;
+    margin: 0 15px;
+
+    i {
+        font-size: 20px;
+    }
+
+    &:not(:nth-child(1)):hover {
+        background: var(--color-3);
+        color: #2D9AA8;
+    }
+
+    &.active {
+        background: var(--color-3);
+        color: #2D9AA8;
+    }
+
+    &:first-child {
+        background-color: #fff;
+        border-radius: 0px;
+        margin: 0;
+        justify-content: center;
+
+        img {
+            width: 90px;
+        }
+
+        width: 100%;
+
+    }
+}
+
+
+
+
+
+
+/* ============================Main========================== */
+
+.Main {
+    position: relative;
+    display: block;
+    left: 250px;
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    transition: 1s;
+}
+
+.Main.active {
+    position: relative;
+    left: 75px;
+    width: calc(100% - 75px);
+    transition: 1s;
+}
+
+.Topbar {
+    position: relative;
+}
+
+.Gadget {
+    position: absolute;
+    display: flex;
+    right: 0;
+    left: 0;
+    top: 0;
+    /* width: 400px; */
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    background: var(--color4);
+    color: var(--color5);
+    box-shadow: var(--shadow);
+}
+
+.Toggle {
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.Profil {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+}
+
+.Profil__img {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.Profil__img img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    place-items: center;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+// profile
+.menu-profile {
+    position: absolute;
+    top: 100%;
+    right: 10%;
+    width: 320px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all .7s linear;
+    z-index: 200;
+
+    &.open {
+        max-height: 400px;
+
+    }
+
+    .sub-menu {
+        background-color: #fff;
+        padding: 20px;
+        margin: 10px;
+
+        .user-info {
+            display: flex;
+            align-items: center;
+
+            h3 {
+                font-weight: 500;
+            }
+
+            img {
+                width: 60px;
+                border-radius: 50%;
+                margin-right: 15px;
+            }
+        }
+
+        hr {
+            border: 0;
+            margin: 15px 0 10px;
+            height: 1px;
+            width: 100%;
+            background-color: #ccc;
+        }
+
+        .sub-menu-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #525252;
+            margin: 12px 0;
+            cursor: pointer;
+            border-bottom: 1px solid #525252;
+
+            .span {
+                width: 100%;
+                font-weight: bold;
+            }
+
+            img {
+                width: 40px;
+                background: #e5e5e5;
+                border-radius: 50%;
+                padding: 8px;
+                margin-right: 15px;
+            }
+
+            .icon {
+                font-size: 22px;
+                font-weight: 500;
+                transition: all 0.5s linear;
+            }
+
+            &:hover span {
+                transform: translateX(5px);
+            }
+
+            &:hover p {
+                font-weight: 600;
+            }
+        }
+
+
+    }
+}
+
+/* ========================================Content============================== */
+
+.Content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    gap: 1.5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.Content .General {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.Box {
+    position: relative;
+    display: flex;
+    padding: 20px;
+    height: 180px;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: var(--color4);
+    color: var(--color5);
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+}
+
+.Box .Icon i {
+    font-size: 68px;
+}
+
+
+/* ================== Order Details List ============== */
+.details {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    margin-top: 4rem;
+}
+
+.details .recentOrders {
+    position: relative;
+    // display: grid;
+    // min-height: 500px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.details .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: fit-content;
+}
+
+.d-flex {
+    gap: 1rem;
+
+    .Box {
+        background-color: #2D9AA8;
+        color: #fff;
+    }
+}
+
+.cardHeader h2 {
+    font-weight: 600;
+    color: var(--blue);
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        height: 3px;
+        width: 80%;
+        background-color: #525252;
+        border-radius: 25px;
+    }
+}
+
+.cardHeader .btn-dash {
+    position: relative;
+    padding: 5px 10px;
+    background: var(--blue);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+    border: none;
+}
+
+.details table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    tr {
+        border-bottom: 2px solid #2D9AA8;
+    }
+}
+
+
+
+.fa-regular {
+    font-weight: 900;
+}
+
+
+
+
+
+/* ======================Responsive==================== */
+
+@media screen and (max-width: 1114px) {
+    .Navigation {
+        width: 200px;
+    }
+
+    .Navigation.active {
+        width: 230px;
+        z-index: 200;
+    }
+
+    .Items {
+        font-size: 15px;
+        gap: 10px;
+    }
+
+    .Main {
+        width: calc(100% - 200px);
+        left: 200px;
+    }
+
+    .Box {
+        flex-direction: column;
+    }
+
+    .Box .Icon i {
+        font-size: 40px;
+    }
+
+    .Other {
+        height: 400px;
+    }
+
+
+}
+
+@media screen and (max-width: 885px) {
+    .Navigation {
+        width: 75px;
+
+        &.active {
+            width: 230px;
+            z-index: 200px;
+        }
+    }
+
+    .Items {
+        gap: 25px;
+    }
+
+    .Main {
+        width: calc(100% - 80px);
+        left: 80px;
+    }
+
+    .Content .General {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        font-size: 13px;
+    }
+
+    .Box {
+        flex-direction: row;
+        width: auto;
+        height: 80px;
+    }
+
+    .Box .Icon i {
+        font-size: 25px;
+    }
+
+    .Other {
+        overflow: scroll;
+    }
+}
+
+@media screen and (max-width: 448px) {
+    .Content {
+        position: relative;
+        width: 100%;
+
+        .General {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1rem;
+        }
+    }
+
+    .Gadget {
+        width: 100%;
+    }
+}
+
+// box reclamation
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 15px;
+}
+
+.box-container .box {
+    border: 1px solid #2D9AA8;
+    border-radius: 5px;
+    background: #fff;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+
+
+.box-container .box h3 {
+    color: #444;
+    font-size: 22px;
+    padding: 10px 0;
+}
+
+.box-container .box p {
+    color: #777;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+
